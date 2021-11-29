@@ -3,6 +3,7 @@
 
 class SwapChain;
 class DeviceContext;
+class VertexBuffer;
 
 
 class GraphicsEngine
@@ -17,6 +18,7 @@ public:
 	static GraphicsEngine* get();
 	SwapChain* createSwapChain();
 	DeviceContext* get_immediate_dc();
+	VertexBuffer* CreateVertexBuffer();
 private:
 	DeviceContext* m_imm_device_context;
 	ID3D11Device* m_d3d_device;
@@ -26,5 +28,6 @@ private:
 	IDXGIDevice* m_dxgi_adapter;
 	IDXGIFactory* m_dxgi_factory;
 	friend class SwapChain; 
+	friend class VertexBuffer;
 };
 

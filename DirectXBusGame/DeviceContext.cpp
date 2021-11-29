@@ -16,6 +16,17 @@ bool DeviceContext::clearRenderTargetColor(SwapChain* swapCHain, float red, floa
 	return true;
 }
 
+void DeviceContext::setVertexBuffer(VertexBuffer* vb)
+{
+
+	UINT stride = vb->m_size_vetex;
+	UINT offset = 0; // size in byte that allows us to set the begining of our buffer
+	m_device_context->IASetVertexBuffers(0, 1, &vb->m_output_buffer, &stride, &offset);
+	//pass the input layout
+	m_device_context->IAGetInputLayout(&vb->input_layout);
+	
+}
+
 bool DeviceContext::release()
 {
 	m_device_context->Release();

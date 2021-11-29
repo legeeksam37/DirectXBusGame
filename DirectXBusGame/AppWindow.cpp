@@ -25,7 +25,7 @@ void AppWindow::onCreate()
 void AppWindow::onUpdate()
 {
 	Window::onUpdate();
-	GraphicsEngine::get()->get_immediate_dc()->clearRenderTargetColor(this->m_swap_chain, 1, 0, 0, 1);
+	GraphicsEngine::get()->get_immediate_dc()->clearRenderTargetColor(this->m_swap_chain, 0, 1, 0, 1);
 
 	m_swap_chain->present(true);
 }
